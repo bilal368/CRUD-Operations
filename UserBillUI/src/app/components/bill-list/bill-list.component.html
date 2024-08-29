@@ -1,0 +1,14 @@
+<div class="bill-list-container">
+    <h2>Bills for User: {{ userId }}</h2>
+    <ul class="bill-list">
+        @for (bill of bills; track $index) {
+      <li class="bill-item">
+        <span>{{ bill.amount | currency }}</span>
+        <span>{{ bill.dueDate | date }}</span>
+        <button class="btn" (click)="payBill(bill._id)">Pay</button>
+      </li>
+    }
+    </ul>
+    <button class="btn btn-primary" (click)="createBill()">Create Bill</button>
+  </div>
+  

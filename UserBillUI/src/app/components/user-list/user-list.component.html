@@ -1,0 +1,13 @@
+<div class="user-list-container">
+    <h2>User List</h2>
+    <ul class="user-list">
+        @for (user of users; track $index) {
+      <li class="user-item">
+        <span>{{ user.name }}</span>
+        <button class="btn" (click)="viewBills(user._id)">View Bills</button>
+        <button class="btn btn-danger" (click)="vacateUser(user._id)">Vacate</button>
+      </li>
+    }
+    </ul>
+  </div>
+  
